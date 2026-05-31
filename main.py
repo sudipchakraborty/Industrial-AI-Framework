@@ -1,46 +1,18 @@
-from langchain_core.messages import HumanMessage
-from app.graph.travel_graph import create_graph
-####################################################
-def main():
+from app.routers.supervisor import supervisor
 
-    print("===================================")
-    print(" Travel Multi-Agent System ")
-    print("===================================")
+from app.observability.dashboard import (
+    show_dashboard
+)
 
-    app = create_graph()
+while True:
 
-    config = {
-        "configurable": {
-            "thread_id": "user1"
-        }
-    }
+    query = input("User: ")
 
-    while True:
+    if query.lower() == "exit":
 
-        query = input("\nEnter Query (exit to quit): ")
+        show_dashboard()
+        break
 
-        if query.lower() == "exit":
-            break
+    response = supervisor(query)
 
-        result = app.invoke(
-            {
-                "messages": [
-                    HumanMessage(content=query)
-                ],
-                "user_query": query,
-                "flight_results": "",
-                "hotel_results": "",
-                "itinerary": "",
-                "llm_calls": 0
-            },
-            config=config
-        )
-
-        print("\n========== RESPONSE ==========\n")
-
-        for msg in result["messages"]:
-            print(msg.content)
-
-
-if __name__ == "__main__":
-    main()
+    print(response)

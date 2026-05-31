@@ -1,0 +1,13 @@
+{
+    "doctor": [
+        "physician"
+    ],
+    "travel": [
+        "reserve",
+        "accommodation"
+    ],
+    "general": [
+        "capital",
+        "india"
+    ]
+}

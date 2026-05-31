@@ -11,4 +11,10 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 AVIATIONSTACK_API_KEY = os.getenv("AVIATIONSTACK_API_KEY")
 
-print("GROQ =", GROQ_API_KEY is not None)
+# print("GROQ =", GROQ_API_KEY is not None)
+
+LLM_PROVIDER="ollama"
+OLLAMA_MODEL="llama3"
+OPENAI_MODEL="gpt-4o-mini"
+GEMINI_MODEL="gemini-2.5-flash"
+GROQ_MODEL="llama-3.3-70b-versatile"

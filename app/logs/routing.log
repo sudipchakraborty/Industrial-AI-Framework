@@ -1,0 +1,59 @@
+2026-05-31 15:16:19.192935 | light | rule_router | {'agent': 'home', 'score': 1, 'confidence': 0.7}
+2026-05-31 15:16:53.671516 | appointment | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 15:16:53.671516 | appointment | llm_router | {'agent': 'doctor', 'confidence': 0.9}
+2026-05-31 15:17:02.779204 | flight to delhi | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 16:49:16.666076 | appointment | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 16:49:31.230814 | appointment | llm_router | {'agent': 'doctor', 'confidence': 0.8}
+2026-05-31 16:49:49.627478 | need doctor | rule_router | {'agent': 'doctor', 'score': 5, 'confidence': 0.95}
+2026-05-31 16:49:58.025495 | need physician | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 16:50:06.033084 | need physician | llm_router | {'agent': 'doctor', 'confidence': 1.0}
+2026-05-31 16:50:13.808941 | consultation | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 16:50:15.429613 | consultation | llm_router | {'agent': 'doctor', 'confidence': 0.9}
+2026-05-31 16:50:25.118962 | reserve accommodation | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 16:50:26.815440 | reserve accommodation | llm_router | {'agent': 'travel', 'confidence': 1.0}
+2026-05-31 17:26:01.100515 | light | rule_router | {'agent': 'home', 'score': 1, 'confidence': 0.7}
+2026-05-31 17:26:09.243947 | physician | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 17:26:09.243947 | physician | embedding_router | {'agent': 'doctor', 'confidence': 0.463, 'scores': {'home': 0.107, 'office': 0.156, 'doctor': 0.463, 'travel': 0.141}}
+2026-05-31 17:26:16.844556 | hotel | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 17:26:19.746991 | flight | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 17:26:29.975398 | capital of india | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 17:26:29.985348 | capital of india | embedding_router | {'agent': 'travel', 'confidence': 0.183, 'scores': {'home': 0.024, 'office': 0.054, 'doctor': 0.022, 'travel': 0.183}}
+2026-05-31 17:26:38.378789 | capital of india | llm_router | {'agent': 'home', 'confidence': 0.9}
+2026-05-31 17:26:48.268629 | meetings | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 17:26:48.295786 | meetings | embedding_router | {'agent': 'office', 'confidence': 0.299, 'scores': {'home': 0.053, 'office': 0.299, 'doctor': 0.166, 'travel': 0.187}}
+2026-05-31 17:26:49.959514 | meetings | llm_router | {'agent': 'travel', 'confidence': 0.8}
+2026-05-31 17:42:44.973952 | capital of india | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 17:42:44.973952 | capital of india | embedding_router | {'agent': 'travel', 'confidence': 0.183, 'scores': {'home': 0.024, 'office': 0.054, 'doctor': 0.022, 'travel': 0.183}}
+2026-05-31 17:42:53.445946 | capital of india | llm_router | {'agent': 'general', 'confidence': 1.0}
+2026-05-31 17:54:09.808674 | need physician | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 17:54:09.820064 | need physician | embedding_router | {'agent': 'doctor', 'confidence': 0.448, 'scores': {'home': 0.031, 'office': 0.047, 'doctor': 0.448, 'travel': 0.091}}
+2026-05-31 17:54:18.308244 | need physician | reflection_agent | {'valid': True, 'suggested_agent': 'doctor', 'confidence': 1.0}
+2026-05-31 17:54:23.197886 | flight to delhi | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 17:54:25.329127 | flight to delhi | reflection_agent | {'valid': True, 'suggested_agent': None, 'confidence': 1.0}
+2026-05-31 17:54:32.915134 | capital of india | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 17:54:32.943347 | capital of india | embedding_router | {'agent': 'travel', 'confidence': 0.183, 'scores': {'home': 0.024, 'office': 0.054, 'doctor': 0.022, 'travel': 0.183}}
+2026-05-31 17:54:34.821918 | capital of india | llm_router | {'agent': 'general', 'confidence': 1.0}
+2026-05-31 17:54:36.737135 | capital of india | reflection_agent | {'valid': True, 'suggested_agent': None, 'confidence': 1.0}
+2026-05-31 18:17:41.693219 | light | rule_router | {'agent': 'home', 'score': 1, 'confidence': 0.7}
+2026-05-31 18:17:50.044488 | light | reflection_agent | {'valid': True, 'suggested_agent': 'home', 'confidence': 1.0}
+2026-05-31 18:17:59.029364 | need physician | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 18:17:59.080079 | need physician | embedding_router | {'agent': 'doctor', 'confidence': 0.448, 'scores': {'home': 0.031, 'office': 0.047, 'doctor': 0.448, 'travel': 0.091}}
+2026-05-31 18:18:01.292368 | need physician | reflection_agent | {'valid': True, 'suggested_agent': 'doctor', 'confidence': 1.0}
+2026-05-31 18:18:09.427515 | capital of india | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 18:18:09.453628 | capital of india | embedding_router | {'agent': 'travel', 'confidence': 0.183, 'scores': {'home': 0.024, 'office': 0.054, 'doctor': 0.022, 'travel': 0.183}}
+2026-05-31 18:18:11.430971 | capital of india | llm_router | {'agent': 'general', 'confidence': 1.0}
+2026-05-31 18:18:13.409732 | capital of india | reflection_agent | {'valid': True, 'suggested_agent': 'general', 'confidence': 1.0}
+2026-05-31 18:18:18.791411 | flight to delhi | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 18:18:21.002018 | flight to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 18:48:11.864421 | need physician | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 18:48:11.876492 | need physician | embedding_router | {'agent': 'doctor', 'confidence': 0.448, 'scores': {'home': 0.031, 'office': 0.047, 'doctor': 0.448, 'travel': 0.091}}
+2026-05-31 18:48:21.000689 | need physician | reflection_agent | {'valid': True, 'suggested_agent': 'doctor', 'confidence': 1.0}
+2026-05-31 18:48:23.246729 | reserve accommodation | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 18:48:23.261783 | reserve accommodation | embedding_router | {'agent': 'travel', 'confidence': 0.306, 'scores': {'home': -0.023, 'office': 0.096, 'doctor': 0.068, 'travel': 0.306}}
+2026-05-31 18:48:25.584142 | reserve accommodation | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 18:48:33.385723 | capital of india | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-05-31 18:48:33.421505 | capital of india | embedding_router | {'agent': 'travel', 'confidence': 0.183, 'scores': {'home': 0.024, 'office': 0.054, 'doctor': 0.022, 'travel': 0.183}}
+2026-05-31 18:48:35.324532 | capital of india | llm_router | {'agent': 'general', 'confidence': 0.8}
+2026-05-31 18:48:37.269153 | capital of india | reflection_agent | {'valid': True, 'suggested_agent': 'general', 'confidence': 1.0}
+2026-05-31 18:57:36.681194 | physician | rule_router | {'agent': 'doctor', 'score': 1, 'confidence': 0.7}
+2026-05-31 18:57:45.177352 | physician | reflection_agent | {'valid': True, 'suggested_agent': 'doctor', 'confidence': 1.0}
