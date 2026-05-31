@@ -3,6 +3,8 @@ langchain>=0.3.25
 langchain-community>=0.3.20
 langchain-openai>=0.3.10
 langgraph>=0.2.50
+langchain-groq
+langchain-tavily
 
 faiss-cpu
 pypdf
@@ -16,3 +18,8 @@ matplotlib
 chromadb
 sqlite-utils
 streamlit-autorefresh
+psycopg[binary] 
+psycopg_pool
+tavily-python
+streamlit
+langgraph-checkpoint-postgres
