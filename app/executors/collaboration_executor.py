@@ -1,3 +1,7 @@
+from app.approval.approval_agent import (
+    request_approval
+)
+
 from app.planners.collaboration_planner import (
     create_collaboration_plan
 )
@@ -5,7 +9,8 @@ from app.planners.collaboration_planner import (
 from app.agents.collaboration_registry import (
     COLLAB_AGENTS
 )
-
+ 
+ 
 
 def execute_collaboration(
     query
@@ -22,6 +27,10 @@ def execute_collaboration(
     )
 
     print(plan)
+
+    if not request_approval(plan):
+        print("\nCollaboration denied.")
+        return {}
 
     results = {}
 

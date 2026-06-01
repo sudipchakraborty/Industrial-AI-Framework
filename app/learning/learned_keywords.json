@@ -1,6 +1,9 @@
 {
     "doctor": [
-        "physician"
+        "physician",
+        "prefer",
+        "window",
+        "seat"
     ],
     "travel": [
         "reserve",
@@ -14,10 +17,12 @@
         "trip",
         "business",
         "prefer",
-        "vistara"
+        "vistara",
+        "emirates"
     ],
     "general": [
         "capital",
-        "india"
+        "india",
+        "dashboard"
     ]
 }

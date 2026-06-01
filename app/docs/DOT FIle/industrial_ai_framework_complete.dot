@@ -1,0 +1,57 @@
+digraph IndustrialAIFramework {
+
+    rankdir=TB;
+
+    User [shape=box];
+    Supervisor [shape=box];
+
+    RuleRouter [shape=box];
+    EmbeddingRouter [shape=box];
+    LLMRouter [shape=box];
+
+    ReflectionAgent [shape=box];
+
+    CollaborationPlanner [shape=box];
+
+    TravelAgent [shape=box];
+    FinanceAgent [shape=box];
+    CalendarAgent [shape=box];
+    EmailAgent [shape=box];
+
+    PlannerAgent [shape=box];
+    ExecutionEngine [shape=box];
+
+    FlightTool [shape=box];
+    HotelTool [shape=box];
+    WeatherTool [shape=box];
+
+    PersistentMemory [shape=box];
+    UserPreferences [shape=box];
+
+    User -> Supervisor;
+
+    Supervisor -> RuleRouter;
+    Supervisor -> EmbeddingRouter;
+    Supervisor -> LLMRouter;
+
+    RuleRouter -> ReflectionAgent;
+    EmbeddingRouter -> ReflectionAgent;
+    LLMRouter -> ReflectionAgent;
+
+    ReflectionAgent -> CollaborationPlanner;
+
+    CollaborationPlanner -> TravelAgent;
+    CollaborationPlanner -> FinanceAgent;
+    CollaborationPlanner -> CalendarAgent;
+    CollaborationPlanner -> EmailAgent;
+
+    TravelAgent -> PlannerAgent;
+    PlannerAgent -> ExecutionEngine;
+
+    ExecutionEngine -> FlightTool;
+    ExecutionEngine -> HotelTool;
+    ExecutionEngine -> WeatherTool;
+
+    ExecutionEngine -> PersistentMemory;
+    PersistentMemory -> UserPreferences;
+}

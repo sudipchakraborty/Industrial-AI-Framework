@@ -1,0 +1,15 @@
+digraph PlanningWorkflow {
+
+    rankdir=LR;
+
+    Goal [shape=box];
+    Plan [shape=box];
+    Execute [shape=box];
+    Retry [shape=box];
+    Result [shape=box];
+
+    Goal -> Plan;
+    Plan -> Execute;
+    Execute -> Retry;
+    Retry -> Result;
+}

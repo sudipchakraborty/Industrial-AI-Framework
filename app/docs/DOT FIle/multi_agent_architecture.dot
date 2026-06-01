@@ -1,0 +1,29 @@
+digraph MultiAgentArchitecture {
+
+    rankdir=TB;
+
+    User [shape=box];
+    Supervisor [shape=box];
+
+    CollaborationPlanner [shape=box];
+
+    TravelAgent [shape=box];
+    FinanceAgent [shape=box];
+    CalendarAgent [shape=box];
+    EmailAgent [shape=box];
+
+    Aggregator [shape=box];
+
+    User -> Supervisor;
+    Supervisor -> CollaborationPlanner;
+
+    CollaborationPlanner -> TravelAgent;
+    CollaborationPlanner -> FinanceAgent;
+    CollaborationPlanner -> CalendarAgent;
+    CollaborationPlanner -> EmailAgent;
+
+    TravelAgent -> Aggregator;
+    FinanceAgent -> Aggregator;
+    CalendarAgent -> Aggregator;
+    EmailAgent -> Aggregator;
+}

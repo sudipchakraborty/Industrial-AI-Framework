@@ -89,3 +89,23 @@
 2026-06-01 10:50:13.280780 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
 2026-06-01 10:55:17.562516 | I prefer Vistara | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
 2026-06-01 10:55:25.916740 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 12:13:24.452595 | I prefer Vistara | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 12:13:32.937946 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 12:14:01.166331 | dashboard | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-06-01 12:14:01.240625 | dashboard | embedding_router | {'agent': 'office', 'confidence': 0.171, 'scores': {'home': 0.163, 'office': 0.171, 'doctor': 0.093, 'travel': 0.115}}
+2026-06-01 12:14:03.154697 | dashboard | llm_router | {'agent': 'general', 'confidence': 1.0}
+2026-06-01 12:14:05.405883 | dashboard | reflection_agent | {'valid': True, 'suggested_agent': 'general', 'confidence': 1.0}
+2026-06-01 12:41:16.975911 | I prefer Vistara | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 12:41:25.999052 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 14:35:49.129983 | I prefer Emirates | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-06-01 14:35:57.539643 | I prefer Emirates | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 14:40:00.451502 | I prefer Vistara | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 14:40:02.692322 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 14:40:11.478496 | I prefer Emirates | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 14:40:13.643068 | I prefer Emirates | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 14:40:21.425086 | I prefer Window Seat | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-06-01 14:40:23.642087 | I prefer Window Seat | reflection_agent | {'valid': False, 'suggested_agent': 'doctor', 'confidence': 0.95}
+2026-06-01 14:40:30.254975 | I prefer Taj Hotel | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 14:40:32.454165 | I prefer Taj Hotel | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 14:42:15.327880 | I prefer Emirates | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 14:42:17.485651 | I prefer Emirates | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}

@@ -1,23 +1,32 @@
 # app/observability/dashboard.py
 
 from app.observability.metrics import (
-    get_metrics
+    METRICS
 )
-
 
 def show_dashboard():
 
-    metrics = get_metrics()
+    print(
+        "\n"
+        + "="*50
+    )
 
-    print("\n")
-    print("=" * 50)
-    print("ROUTING DASHBOARD")
-    print("=" * 50)
+    print(
+        "OBSERVABILITY DASHBOARD"
+    )
 
-    for key, value in metrics.items():
+    print(
+        "="*50
+    )
+
+    for k, v in (
+        METRICS.items()
+    ):
 
         print(
-            f"{key:<30} : {value}"
+            f"{k:<30}: {v}"
         )
 
-    print("=" * 50)
+    print(
+        "="*50
+    )

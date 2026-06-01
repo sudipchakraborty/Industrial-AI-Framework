@@ -1,16 +1,42 @@
 import json
 import re
 
-from app.llm.factory import get_llm
+from app.llm.factory import (
+    get_llm
+)
 
 from app.planners.planner_prompt import (
     PLANNER_PROMPT
 )
 
+from app.observability.metrics import (
+    increment
+)
+
+
 llm = get_llm()
 
 
-def create_plan(query):
+def clean_json(
+    json_text
+):
+
+    json_text = re.sub(
+        r"//.*",
+        "",
+        json_text
+    )
+
+    return json_text
+
+
+def create_plan(
+    query
+):
+
+    increment(
+        "planner_calls"
+    )
 
     prompt = (
         PLANNER_PROMPT
@@ -28,7 +54,13 @@ def create_plan(query):
         "\nPlanner Response:"
     )
 
-    print(response)
+    print(
+        response
+    )
+
+    # =====================================
+    # Try direct JSON parse
+    # =====================================
 
     try:
 
@@ -36,18 +68,18 @@ def create_plan(query):
             response
         )
 
-    except:
+    except Exception:
 
         pass
 
     # =====================================
-    # Extract JSON Block
+    # Extract JSON block
     # =====================================
 
     try:
 
         match = re.search(
-            r'\{.*\}',
+            r"\{.*\}",
             response,
             re.DOTALL
         )
@@ -58,6 +90,10 @@ def create_plan(query):
                 match.group(0)
             )
 
+            json_text = clean_json(
+                json_text
+            )
+
             return json.loads(
                 json_text
             )
@@ -65,9 +101,14 @@ def create_plan(query):
     except Exception as e:
 
         print(
-            f"Planner Parse Error: {e}"
+            "\nPlanner Parse Error:"
+        )
+
+        print(
+            e
         )
 
     return {
+
         "steps": []
     }

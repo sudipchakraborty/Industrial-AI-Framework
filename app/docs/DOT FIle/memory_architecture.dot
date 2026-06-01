@@ -1,0 +1,17 @@
+digraph MemoryArchitecture {
+
+    rankdir=LR;
+
+    User [shape=box];
+    Memory [shape=box];
+    Planner [shape=box];
+    Agents [shape=box];
+    Tools [shape=box];
+    Result [shape=box];
+
+    User -> Memory;
+    Memory -> Planner;
+    Planner -> Agents;
+    Agents -> Tools;
+    Tools -> Result;
+}

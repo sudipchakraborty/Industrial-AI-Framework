@@ -1,5 +1,9 @@
 import time
 
+from app.observability.metrics import (
+    increment
+)
+
 
 def execute_step(
     step_name,
@@ -8,6 +12,10 @@ def execute_step(
 ):
 
     retries = 3
+
+    increment(
+        "tool_calls"
+    )
 
     for attempt in range(
         retries
@@ -21,14 +29,26 @@ def execute_step(
 
         except Exception as e:
 
-            print(
-                f"{step_name} failed "
-                f"attempt {attempt+1}"
+            increment(
+                "tool_failures"
             )
 
-            time.sleep(1)
+            print(
+                f"{step_name} failed "
+                f"attempt {attempt + 1}"
+            )
+
+            print(
+                f"Error: {e}"
+            )
+
+            time.sleep(
+                1
+            )
 
     return {
+
         "error":
-        f"{step_name} failed"
+            f"{step_name} failed after "
+            f"{retries} retries"
     }

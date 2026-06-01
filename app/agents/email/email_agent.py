@@ -1,3 +1,10 @@
+# app/agents/email/email_agent.py
+
+from app.observability.metrics import (
+    increment
+)
+
+
 class EmailAgent:
 
     def execute(
@@ -5,6 +12,12 @@ class EmailAgent:
         query
     ):
 
+        increment(
+            "email_agent_calls"
+        )
+
         return {
-            "status": "drafted"
+
+            "status":
+                "drafted"
         }

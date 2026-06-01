@@ -28,26 +28,43 @@ from app.memory.memory_tool import (
     update_preference
 )
 
+from app.observability.metrics import (
+    increment
+)
+
+
 class TravelAgent:
 
     def execute(
         self,
         query
     ):
-        
+
+        # =====================================
+        # METRICS
+        # =====================================
+
+        increment(
+            "travel_agent_calls"
+        )
+
+        # =====================================
+        # MEMORY UPDATE
+        # =====================================
 
         memory_result = (
-    update_preference(
-        query
-    )
-    )
+            update_preference(
+                query
+            )
+        )
+
         if memory_result:
+
             return memory_result
 
-
-
-
-        query_lower = query.lower()
+        query_lower = (
+            query.lower()
+        )
 
         # =====================================
         # MULTI-STEP PLANNING
@@ -63,7 +80,9 @@ class TravelAgent:
                 "\nGenerated Plan:"
             )
 
-            print(plan)
+            print(
+                plan
+            )
 
             result = {}
 
@@ -72,11 +91,9 @@ class TravelAgent:
                 []
             ):
 
-                tool_name = None
-
-                # ---------------------------------
-                # Handle JSON Plan
-                # ---------------------------------
+                # --------------------------------
+                # Handle dict plans
+                # --------------------------------
 
                 if isinstance(
                     step,
@@ -84,106 +101,67 @@ class TravelAgent:
                 ):
 
                     tool_name = (
-                        step.get(
-                            "tool"
-                        )
+                        step.get("tool")
+                        or
+                        step.get("type")
                     )
 
                 else:
 
                     tool_name = step
 
-                # ---------------------------------
-                # Flight Search
-                # ---------------------------------
+                # --------------------------------
+                # Flight
+                # --------------------------------
 
                 if (
-                    tool_name ==
+                    tool_name
+                    ==
                     "flight_search"
                 ):
 
-                    destination = (
-                        step.get(
-                            "destination",
-                            "Delhi"
-                        )
-                        if isinstance(
-                            step,
-                            dict
-                        )
-                        else "Delhi"
-                    )
-
                     result[
                         "flight"
-                    ] = (
-                        execute_step(
-                            "flight_search",
-                            search_flight,
-                            destination
-                        )
+                    ] = execute_step(
+                        "flight_search",
+                        search_flight,
+                        "Delhi"
                     )
 
-                # ---------------------------------
-                # Hotel Search
-                # ---------------------------------
+                # --------------------------------
+                # Hotel
+                # --------------------------------
 
                 elif (
-                    tool_name ==
+                    tool_name
+                    ==
                     "hotel_search"
                 ):
 
-                    location = (
-                        step.get(
-                            "location",
-                            "Delhi"
-                        )
-                        if isinstance(
-                            step,
-                            dict
-                        )
-                        else "Delhi"
-                    )
-
                     result[
                         "hotel"
-                    ] = (
-                        execute_step(
-                            "hotel_search",
-                            search_hotel,
-                            location
-                        )
+                    ] = execute_step(
+                        "hotel_search",
+                        search_hotel,
+                        "Delhi"
                     )
 
-                # ---------------------------------
-                # Weather Search
-                # ---------------------------------
+                # --------------------------------
+                # Weather
+                # --------------------------------
 
                 elif (
-                    tool_name ==
+                    tool_name
+                    ==
                     "weather_search"
                 ):
 
-                    location = (
-                        step.get(
-                            "location",
-                            "Delhi"
-                        )
-                        if isinstance(
-                            step,
-                            dict
-                        )
-                        else "Delhi"
-                    )
-
                     result[
                         "weather"
-                    ] = (
-                        execute_step(
-                            "weather_search",
-                            get_weather,
-                            location
-                        )
+                    ] = execute_step(
+                        "weather_search",
+                        get_weather,
+                        "Delhi"
                     )
 
             return result
@@ -200,10 +178,13 @@ class TravelAgent:
             "\nSelected Tool:"
         )
 
-        print(tool)
+        print(
+            tool
+        )
 
         if (
-            tool ==
+            tool
+            ==
             "flight_search"
         ):
 
@@ -214,7 +195,8 @@ class TravelAgent:
             )
 
         if (
-            tool ==
+            tool
+            ==
             "hotel_search"
         ):
 
@@ -225,7 +207,8 @@ class TravelAgent:
             )
 
         if (
-            tool ==
+            tool
+            ==
             "weather_search"
         ):
 
@@ -236,6 +219,7 @@ class TravelAgent:
             )
 
         return {
+
             "message":
             "No suitable travel tool found"
         }
