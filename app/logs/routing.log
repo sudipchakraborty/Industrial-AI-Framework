@@ -57,3 +57,35 @@
 2026-05-31 18:48:37.269153 | capital of india | reflection_agent | {'valid': True, 'suggested_agent': 'general', 'confidence': 1.0}
 2026-05-31 18:57:36.681194 | physician | rule_router | {'agent': 'doctor', 'score': 1, 'confidence': 0.7}
 2026-05-31 18:57:45.177352 | physician | reflection_agent | {'valid': True, 'suggested_agent': 'doctor', 'confidence': 1.0}
+2026-05-31 21:37:08.401706 | flight to delhi | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 21:37:22.021628 | flight to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 21:53:10.384460 | flight to delhi | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-05-31 21:53:18.839998 | flight to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 21:53:57.978646 | book hotel | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 21:54:00.133213 | book hotel | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 21:54:14.931746 | weather in delhi | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 21:54:17.094823 | weather in delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 22:04:30.620080 | book accommodation | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-05-31 22:04:41.310842 | book accommodation | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 22:13:25.035334 | book accommodation | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-05-31 22:13:33.671171 | book accommodation | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 22:31:58.071181 | flight to delhi | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-05-31 22:32:06.550428 | flight to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 22:32:42.056191 | plan my trip to delhi | rule_router | {'agent': 'travel', 'score': 1, 'confidence': 0.7}
+2026-05-31 22:32:44.208733 | plan my trip to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 22:41:13.804463 | plan my trip to delhi | rule_router | {'agent': 'travel', 'score': 3, 'confidence': 0.95}
+2026-05-31 22:41:22.537311 | plan my trip to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 22:57:26.269670 | plan my trip to delhi | rule_router | {'agent': 'travel', 'score': 3, 'confidence': 0.95}
+2026-05-31 22:57:35.079917 | plan my trip to delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 23:08:16.443567 | Plan my business trip to Delhi | rule_router | {'agent': 'travel', 'score': 3, 'confidence': 0.95}
+2026-05-31 23:08:25.517364 | Plan my business trip to Delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-05-31 23:12:50.097306 | Plan my business trip to Delhi | rule_router | {'agent': 'travel', 'score': 4, 'confidence': 0.95}
+2026-05-31 23:12:52.381553 | Plan my business trip to Delhi | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 10:41:27.684503 | I prefer Vistara | rule_router | {'agent': None, 'score': 0, 'confidence': 0.0}
+2026-06-01 10:41:27.767614 | I prefer Vistara | embedding_router | {'agent': 'travel', 'confidence': 0.08, 'scores': {'home': 0.02, 'office': 0.069, 'doctor': 0.018, 'travel': 0.08}}
+2026-06-01 10:41:39.142182 | I prefer Vistara | llm_router | {'agent': 'travel', 'confidence': 1.0}
+2026-06-01 10:41:42.488232 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 10:50:04.715647 | I prefer Vistara | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 10:50:13.280780 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}
+2026-06-01 10:55:17.562516 | I prefer Vistara | rule_router | {'agent': 'travel', 'score': 2, 'confidence': 0.8}
+2026-06-01 10:55:25.916740 | I prefer Vistara | reflection_agent | {'valid': True, 'suggested_agent': 'travel', 'confidence': 1.0}

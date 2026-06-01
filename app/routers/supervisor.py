@@ -27,6 +27,10 @@ from app.learning.learner import (
     learn
 )
 
+from app.executors.collaboration_executor import (
+    execute_collaboration
+)
+
 
 RULE_THRESHOLD = 0.70
 EMBEDDING_THRESHOLD = 0.30
@@ -97,6 +101,23 @@ def execute_with_reflection(
 
 
 def supervisor(query):
+
+    # =====================================
+    # MULTI-AGENT COLLABORATION
+    # =====================================
+
+    if (
+        "business trip"
+        in query.lower()
+    ):
+
+        print(
+            "\nCollaboration Workflow Triggered"
+        )
+
+        return execute_collaboration(
+            query
+        )
 
     # ==================================================
     # STEP 1 : RULE ROUTER
