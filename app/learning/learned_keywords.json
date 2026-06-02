@@ -29,7 +29,9 @@
         "capital",
         "india",
         "dashboard",
-        "tomorrow"
+        "tomorrow",
+        "who's",
+        "e001"
     ],
     "office": [
         "upcoming",
@@ -62,6 +64,8 @@
         "many",
         "employees",
         "checked",
-        "late?"
+        "late?",
+        "absent?",
+        "today"
     ]
 }
