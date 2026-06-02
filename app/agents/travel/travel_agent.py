@@ -1,5 +1,3 @@
-# app/agents/travel/travel_agent.py
-
 from app.planners.planner_agent import (
     create_plan
 )
@@ -91,10 +89,6 @@ class TravelAgent:
                 []
             ):
 
-                # --------------------------------
-                # Handle dict plans
-                # --------------------------------
-
                 if isinstance(
                     step,
                     dict
@@ -110,9 +104,9 @@ class TravelAgent:
 
                     tool_name = step
 
-                # --------------------------------
+                # -----------------------------
                 # Flight
-                # --------------------------------
+                # -----------------------------
 
                 if (
                     tool_name
@@ -128,9 +122,9 @@ class TravelAgent:
                         "Delhi"
                     )
 
-                # --------------------------------
+                # -----------------------------
                 # Hotel
-                # --------------------------------
+                # -----------------------------
 
                 elif (
                     tool_name
@@ -146,9 +140,9 @@ class TravelAgent:
                         "Delhi"
                     )
 
-                # --------------------------------
+                # -----------------------------
                 # Weather
-                # --------------------------------
+                # -----------------------------
 
                 elif (
                     tool_name
@@ -167,7 +161,7 @@ class TravelAgent:
             return result
 
         # =====================================
-        # SINGLE TOOL EXECUTION
+        # PHASE-13 FAST TOOL ROUTER
         # =====================================
 
         tool = llm_select_tool(
@@ -181,6 +175,10 @@ class TravelAgent:
         print(
             tool
         )
+
+        # =====================================
+        # EXECUTE TOOL
+        # =====================================
 
         if (
             tool
@@ -218,8 +216,15 @@ class TravelAgent:
                 "Delhi"
             )
 
+        # =====================================
+        # FALLBACK
+        # =====================================
+
         return {
 
             "message":
-            "No suitable travel tool found"
+                "No suitable travel tool found",
+
+            "query":
+                query
         }

@@ -26,3 +26,9 @@ psycopg_pool
 tavily-python
 streamlit
 sentence-transformers
+google-generativeai
+
+chromadb
+sentence-transformers
+pypdf
+langchain-text-splitters

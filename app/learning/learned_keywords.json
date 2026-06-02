@@ -18,11 +18,50 @@
         "business",
         "prefer",
         "vistara",
-        "emirates"
+        "emirates",
+        "kolkata",
+        "advice",
+        "future",
+        "tomorrow",
+        "from"
     ],
     "general": [
         "capital",
         "india",
-        "dashboard"
+        "dashboard",
+        "tomorrow"
+    ],
+    "office": [
+        "upcoming",
+        "office",
+        "travel",
+        "health",
+        "checkup",
+        "many",
+        "casual",
+        "leaves",
+        "allowed?"
+    ],
+    "hr": [
+        "many",
+        "casual",
+        "leaves",
+        "allowed?",
+        "what",
+        "probation",
+        "policy?"
+    ],
+    "attendance": [
+        "absent",
+        "today?",
+        "present",
+        "show",
+        "attendance",
+        "employee",
+        "e1001",
+        "many",
+        "employees",
+        "checked",
+        "late?"
     ]
 }

@@ -1,11 +1,42 @@
 # main.py
 
-from app.routers.supervisor import (
-    supervisor
+import os
+import time
+from dotenv import load_dotenv
+
+load_dotenv()
+
+#############################
+print(
+    "OPENAI:",
+    bool(
+        os.getenv(
+            "OPENAI_API_KEY"
+        )
+    )
 )
 
+print(
+    "GROQ:",
+    bool(
+        os.getenv(
+            "GROQ_API_KEY"
+        )
+    )
+)
+######################
+
+
+
+
+
+from app.routers.supervisor import supervisor
 from app.observability.dashboard import (
     show_dashboard
+)
+
+from app.agents.registry_loader import (
+    get_registry
 )
 
 
@@ -23,6 +54,11 @@ def main():
         "Type 'exit' to quit\n"
     )
 
+    print("\nREGISTRY:\n")
+
+    for k in get_registry().keys():
+        print(k)
+
     while True:
 
         query = input(
@@ -33,10 +69,7 @@ def main():
         # EXIT
         # ==========================
 
-        if (
-            query.lower()
-            == "exit"
-        ):
+        if query.lower() == "exit":
 
             print(
                 "\nGoodbye!"
@@ -48,13 +81,10 @@ def main():
         # DASHBOARD
         # ==========================
 
-        if (
-            query.lower()
-            in [
-                "dashboard",
-                "metrics"
-            ]
-        ):
+        if query.lower() in [
+            "dashboard",
+            "metrics"
+        ]:
 
             show_dashboard()
 
@@ -68,18 +98,25 @@ def main():
 
             continue
 
-        # ==========================
-        # SUPERVISOR
-        # ==========================
-
         try:
+
+            start_time = time.time()
 
             response = supervisor(
                 query
             )
 
+            elapsed = round(
+                time.time() - start_time,
+                2
+            )
+
+            print("\nAssistant:")
+
+            print(response)
+
             print(
-                response
+                f"\nExecution Time: {elapsed}s"
             )
 
         except Exception as e:
@@ -88,9 +125,7 @@ def main():
                 "\nExecution Error:"
             )
 
-            print(
-                str(e)
-            )
+            print(str(e))
 
 
 if __name__ == "__main__":

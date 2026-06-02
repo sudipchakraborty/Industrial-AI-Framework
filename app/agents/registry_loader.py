@@ -1,3 +1,4 @@
+#registry_loader.py
 from copy import deepcopy
 
 from app.agents.registry import AGENTS

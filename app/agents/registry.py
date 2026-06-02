@@ -1,7 +1,4 @@
-# app/agents/registry.py
-
 AGENTS = {
-
 
     "home": {
         "description": "Home automation devices",
@@ -10,7 +7,9 @@ AGENTS = {
             "fan",
             "bulb",
             "switch",
-            "ac"
+            "ac",
+            "air conditioner",
+            "home automation"
         ]
     },
 
@@ -19,8 +18,30 @@ AGENTS = {
         "keywords": [
             "meeting",
             "email",
+            "salary",
+            "manager",
+            "project",
+            "timesheet",
+            "conference",
+            "office"
+        ]
+    },
+
+    "attendance": {
+        "description": "Employee attendance management",
+        "keywords": [
             "attendance",
-            "salary"
+            "absent",
+            "present",
+            "checked in",
+            "check in",
+            "late employee",
+            "late employees",
+            "employee attendance",
+            "attendance report",
+            "who is absent",
+            "who is present",
+            "attendance status"
         ]
     },
 
@@ -31,7 +52,12 @@ AGENTS = {
             "bp",
             "blood pressure",
             "sugar",
-            "medicine"
+            "medicine",
+            "doctor",
+            "hospital",
+            "health",
+            "checkup",
+            "patient"
         ]
     },
 
@@ -41,7 +67,38 @@ AGENTS = {
             "flight",
             "hotel",
             "booking",
-            "ticket"
+            "ticket",
+            "airline",
+            "airport",
+            "trip",
+            "travel",
+            "reservation"
+        ]
+    },
+
+    "hr": {
+        "description": "HR policies and employee handbook",
+        "keywords": [
+            "leave",
+            "leaves",
+            "casual",
+            "casual leave",
+            "casual leaves",
+            "sick leave",
+            "earned leave",
+            "marriage leave",
+            "marriage",
+            "bereavement leave",
+            "probation",
+            "policy",
+            "holiday",
+            "vacation",
+            "reimbursement",
+            "travel reimbursement",
+            "employee handbook",
+            "employee benefits",
+            "hr policy",
+            "leave policy"
         ]
     },
 

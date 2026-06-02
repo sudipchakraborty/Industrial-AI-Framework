@@ -33,13 +33,10 @@ AGENT_DESCRIPTIONS = {
     meeting,
     conference,
     attendance,
-    hr,
     salary,
-    employee,
     manager,
     project,
     timesheet,
-    leave application,
     document management
     """,
 
@@ -82,13 +79,29 @@ AGENT_DESCRIPTIONS = {
     itinerary,
     transport,
     lodging
+    """,
+
+    "hr":
+    """
+    human resources,
+    hr,
+    leave policy,
+    casual leave,
+    sick leave,
+    earned leave,
+    marriage leave,
+    bereavement leave,
+    probation policy,
+    employee handbook,
+    company policy,
+    reimbursement policy,
+    travel reimbursement,
+    holiday policy,
+    vacation policy,
+    employee benefits
     """
 }
 
-
-# --------------------------------------------------
-# Pre-compute embeddings once at startup
-# --------------------------------------------------
 
 AGENT_EMBEDDINGS = {}
 
@@ -97,7 +110,6 @@ for agent, description in AGENT_DESCRIPTIONS.items():
     AGENT_EMBEDDINGS[agent] = get_embedding(
         description
     )
-
 
 print(
     f"[Embedding Router] Loaded "
